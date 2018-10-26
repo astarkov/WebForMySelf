@@ -1,0 +1,20 @@
+<div class="col s3 m3" >
+  <div class="card" appHover>
+    <div class="card-image">
+      <img src="{{user.image}}">
+      <span
+        [ngClass]="{'marked': isMarked}"
+        class="card-title "
+      >{{user.name | uppercase}}</span>
+    </div>
+    <div class="card-content">
+      <p>{{user.geo}}</p>
+    </div>
+    <div class="card-action">
+      <a
+        (click)="onClick()"
+        class="waves-effect waves-light btn-large"
+      ><i class="material-icons left">cloud</i>Отметить</a>
+    </div>
+  </div>
+</div>
