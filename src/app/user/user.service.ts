@@ -7,19 +7,12 @@ import { map } from 'rxjs/operators';
 
 @Injectable()
 export class UserService {
+  size = 8;
   constructor(private http: HttpClient) {}
 
- /* getUsers() {
 
-    return  this.http.get('https://randomuser.me/api/?results=50').map(function(user){
-        console.log(user);
-        return user
-
-      })
-
-  }*/
   getUsers(): Observable<any[]> {
-    return this.http.get('https://randomuser.me/api/?results=10').pipe(map(data=>{
+    return this.http.get('https://randomuser.me/api/?results=' + this.size).pipe(map(data=>{
       let usersList = data["results"];
       return usersList.map(function(user:any) {
         return {
@@ -30,6 +23,9 @@ export class UserService {
       });
 
     }));
+  }
+  setSize (size) {
+    this.size = size;
   }
 
 

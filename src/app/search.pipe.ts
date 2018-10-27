@@ -1,11 +1,10 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {Directive} from '@angular/core';
 
-@Pipe(){
+@Pipe({
   name: 'search'
-}
+})
 export class SearchPipe implements PipeTransform {
-  transform(users, value) {
+  transform(users: any, value?: any): any {
     return users.filter(user => {
       return user.name.includes(value);
     });

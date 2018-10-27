@@ -1,24 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
-
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Приложение</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a routerLink = ''>Главная</a></li>
+      <li><a routerLink = '/setup'>Настройки</a></li>
+    </ul>
+  </div>
+</nav>
 <div class="container">
-
-  <div class="row">
-    <div class="input-field col s6">
-      <input type="text" id="autocomplete-input" class="validate" [(ngModel)]="searchStr">
-      <label for="autocomplete-input">Посик по имени</label>
-    </div>
-  </div>
-
-  <div class="row">
-
-
-    <!--<app-user *ngFor="let u of users | search: users: searchStr "-->
-    <!--[searchStr] = 'searchStr'-->
-    <app-user *ngFor="let u of users "
-              [user]='u'
-              [test]='test'
-    ></app-user>
-  </div>
+  <router-outlet></router-outlet>
 
 </div>
 
